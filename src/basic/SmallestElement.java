@@ -11,4 +11,3 @@ public class SmallestElement {
         System.out.println("MIN : "+min);
     }
 }
-
