@@ -1,5 +1,7 @@
 package mock;
 import java.util.*;
+import java.util.stream.Collectors;
+
 // Book class
 class Book {
     String bookId;
@@ -106,7 +108,7 @@ public class _01_Library implements ILibrary{
 
     @Override
     public List<Book> searchByAuthor(String author) {
-        return books.stream().filter(obj -> obj.author.equalsIgnoreCase(author)).toList();
+        return books.stream().filter(obj -> obj.author.equalsIgnoreCase(author)).collect(Collectors.toList());
     }
 
     @Override

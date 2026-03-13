@@ -157,7 +157,7 @@ class BookingStore implements IBookingStore{
     Queue<Booking> bookingQueue = new LinkedList<>();
 
     @Override
-    public void storeBookings(Queue<Booking> bookings) throws IOException {
+    public void storeBookings(Queue<Booking> bookings) {
         while(!bookings.isEmpty())
             bookingQueue.add(bookings.poll());
     }
@@ -421,7 +421,7 @@ class BookingSystem implements IBookingSystem{
     }
 
     @Override
-    public void generateReport(String filename) throws IOException, ReportException {
+    public void generateReport(String filename) throws  ReportException {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
             writer.write("=== HOTEL BOOKING REPORT ===\n\n");
 
@@ -792,9 +792,9 @@ public class _09_BookingSystem {
 
             System.out.println("\n🏆 TOP PERFORMERS:");
             System.out.println("  Top Guest: " +
-                    (topGuests.isEmpty() ? "N/A" : topGuests.get(0)));
+                    (topGuests.isEmpty() ? "N/A" : topGuests.getFirst()));
             System.out.println("  Most Booked Room: " +
-                    (topRooms.isEmpty() ? "N/A" : topRooms.get(0)));
+                    (topRooms.isEmpty() ? "N/A" : topRooms.getFirst()));
 
             System.out.println("\n📁 FILES GENERATED:");
             System.out.println("  1. " + exportFile);
