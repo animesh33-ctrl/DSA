@@ -227,7 +227,7 @@ class ReviewSystem implements IReviewSystem{
 
         if(reviews.size() >= batchSize){
             try {
-                reviewStore.storeReviews(reviews);
+                flush();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

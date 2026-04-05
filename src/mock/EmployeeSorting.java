@@ -1,12 +1,10 @@
 package mock;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Month;
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.Arrays;
 
 public class EmployeeSorting {
 
@@ -114,9 +112,6 @@ public class EmployeeSorting {
 //        List<Employee> list = Arrays.asList(employees); // it is a immutable collection bcz of using asList
 //        list.add(new Employee());// so we can't add
 
-        //but there is a method to do the work
-        List<Employee> list = new ArrayList<>(Arrays.asList(employees));
-        list.add(new Employee());
 
         List<Employee> ans = getSortedEmployee(employees);
 
