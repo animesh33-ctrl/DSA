@@ -1,4 +1,4 @@
-//package _pr;
+package _pr;
 import java.util.*;
 public class LongestSubstring {
     public static int lengthOfLongestSubstring(String str){
